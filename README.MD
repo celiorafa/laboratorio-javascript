@@ -1,0 +1,1 @@
+Repositório utilizado para treinar a programação em linguagem Javascript
