@@ -29,6 +29,51 @@ function calculaEscritura(valorNegocio)
     : "fora da faixa";
 
     console.log(`Total Escritura: R$ ${totalEscritura.toLocaleString('pt-BR')}`);
+    return totalEscritura;
 }
 
-calculaEscritura(150000);
+function calculaRegistro(valorNegocio)
+{
+    let totalRegistro = valorNegocio < 1919 
+    ? 217.92 
+    : valorNegocio< 4794
+    ? 349.68
+    : valorNegocio< 7991
+    ? 627.32
+    : valorNegocio< 15985
+    ? 930.78
+    : valorNegocio< 31970
+    ? 1131.61
+    : valorNegocio< 95910
+    ? 1261.98
+    : valorNegocio< 159850
+    ? 1610.74
+    : valorNegocio< 191820
+    ? 1958.79
+    : valorNegocio< 223790
+    ? 2132.45
+    : valorNegocio< 255760
+    ? 2307.13
+    : valorNegocio< 287730
+    ? 2432.16
+    : valorNegocio< 319700
+    ? 2495.59
+    : valorNegocio< 639400
+    ? 2782.58
+    : "fora da faixa";
+
+    console.log(`Total Registro: R$ ${totalRegistro.toLocaleString('pt-BR')}`);
+    return totalRegistro;
+}
+
+function calculaITBI (valorNegocio)
+{
+    let itbiJundiai = valorNegocio*0.025;
+    
+    console.log(`O valor de ITBI para Jundiaí é: R$ ${itbiJundiai.toLocaleString('pt-BR')}`);
+    return itbiJundiai;
+
+}
+const valor = 150000
+let totalOrcamento = calculaEscritura(valor)+calculaRegistro(valor)+calculaITBI(valor);
+console.log(`Total do orçamento: R$ ${totalOrcamento.toLocaleString('pt-BR')}`);
